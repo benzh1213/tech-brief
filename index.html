@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+  <meta name="description" content="Tech Brief 全球科技晨報：重點新聞、公司追蹤與 AI Radar。"><title>全球科技晨報｜2026-11-02</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wrap">
+  <div class="topbar">
+    <div>
+      <div class="brand">TECH BRIEF / 全球科技晨報</div>
+      <div class="date">2026 年 11 月 2 日 · 5–8 分鐘閱讀</div>
+    </div>
+    <div class="actions">
+      <button id="expandBtn">全部展開</button>
+      <button id="shareBtn">分享</button>
+    </div>
+  </div>
+
+  <p class="edition-note" role="note">2026-11-02 原始示範版 · 新聞內容尚未重新核實；本頁目前不會自動更新。</p><header>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Today’s Global Tech Brief</div>
+        <h1>AI 進入回報驗證期，<br>機器人與資安同步升溫</h1>
+        <p class="lead">
+          今天最值得關注的，不是一款新產品，而是科技產業的重心正在移動：
+          AI 投資開始被要求證明回報、具身智能走向商業化，而大型資安事件再次提醒市場——算力、資本與安全正變成同一場競賽。
+        </p>
+        <div class="chipline">
+          <span class="chip">AI</span><span class="chip">機器人</span><span class="chip">資安</span><span class="chip">自駕</span><span class="chip">太空運算</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="grid"></div><div class="orb o1"></div><div class="orb o2"></div>
+        <svg viewBox="0 0 400 260" width="100%" height="100%" style="position:absolute;inset:0">
+          <g fill="none" stroke="currentColor" stroke-width="2" opacity=".7">
+            <path d="M56 188 C110 110, 160 120, 206 82 S300 72, 342 38"/>
+            <path d="M74 206 C130 180, 164 188, 212 142 S294 114, 332 92" opacity=".6"/>
+          </g>
+          <g fill="currentColor">
+            <circle cx="56" cy="188" r="7"/><circle cx="206" cy="82" r="8"/><circle cx="342" cy="38" r="7"/>
+            <rect x="244" y="134" width="64" height="64" rx="14" opacity=".85"/>
+            <circle cx="274" cy="166" r="12" fill="var(--panel)"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+  </header>
+
+  <h2 class="section-title">今天最重要的 3 個趨勢</h2>
+  <section class="insights">
+    <div class="insight">
+      <div class="num">01 · AI Economics</div>
+      <h3>AI 從「先投再說」走向 ROI 驗證</h3>
+      <p>市場開始重新檢視 GPU、資料中心、電力與融資成本，企業是否能把 AI 轉成營收與效率，變得比模型參數更重要。</p>
+    </div>
+    <div class="insight">
+      <div class="num">02 · Embodied AI</div>
+      <h3>AI 正走出螢幕、進入物理世界</h3>
+      <p>機器人、自駕與具身智能加速融合，下一波競爭不只在模型能力，而在模型能否控制真實世界中的硬體。</p>
+    </div>
+    <div class="insight">
+      <div class="num">03 · Strategic Compute</div>
+      <h3>算力正在變成基礎設施與國家資源</h3>
+      <p>資料中心、能源、太空運算與資安被綁在一起，未來競爭將是模型、晶片、電力與安全能力的整合戰。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="tracker-title">
+    <h2 class="section-title" id="tracker-title">Big Tech Tracker · 公司追蹤</h2>
+    <p class="summary">數字為本期收錄篇數；0 表示本期未收錄，並非沒有重大新聞。</p>
+    <div class="filters" id="companyFilters" aria-label="篩選公司"></div>
+  </section>
+  <section aria-labelledby="radar-title">
+    <h2 class="section-title" id="radar-title">AI Radar · 本期主題分布</h2>
+    <p class="summary">依本期文章分類計數，每篇只計一次，並非全市場熱度。</p>
+    <div class="radar" id="radar"></div>
+  </section>
+  <h2 class="section-title" id="news-title">本期新聞</h2>
+  <p id="resultCount" role="status" aria-live="polite"></p>
+  <div class="filters">
+    <button class="chip active" data-filter="all">全部</button>
+    <button class="chip" data-filter="AI">AI</button>
+    <button class="chip" data-filter="Robot">機器人 / 自駕</button>
+    <button class="chip" data-filter="Security">資安</button>
+    <button class="chip" data-filter="Infra">基礎設施</button>
+  </div>
+
+  <main class="news-grid" id="newsGrid">
+
+    <article data-companies="" data-category="AI">
+      <div class="meta"><span class="tag">AI · 市場</span><span>★★★★★</span></div>
+      <p class="summary">市場關注點正從「AI 還能成長多少」轉向資料中心、GPU、電力與融資成本能否長期支撐。</p>
+      <details>
+        <summary><h2>AI 熱潮開始遭遇「錢花太多、回報在哪裡？」的質疑</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>近期亞洲科技股承壓，投資人開始重新評估 AI 資本支出與現金流壓力。接下來大型科技公司的財報，會成為市場判斷 AI 投資效率的重要測試。</p>
+        <p class="why"><strong>為什麼重要：</strong>AI 產業正在從「建設期」進入「回報驗證期」，未來市場更在意每一美元 AI 投資究竟帶來多少實際產出。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://piqmarkets.com/reuters/asia-shares-bend-under-ai-stress-apple-earnings-loom-2026-11-02-00-40-46" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">Reuters via PIQ Markets</span>
+      </div>
+    </article>
+
+    <article data-companies="OpenAI" data-category="AI">
+      <div class="meta"><span class="tag">AI · 融資</span><span>★★★★★</span></div>
+      <p class="summary">據報 OpenAI 將本輪融資目標由約 300 億美元調整至約 200 億美元，市場對 AI 高估值的態度開始轉趨審慎。</p>
+      <details>
+        <summary><h2>OpenAI 據報調降新一輪融資目標</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>報導指出，OpenAI 原先尋求更高融資規模與估值，但部分大型投資者反應不如預期熱烈，市場開始重新衡量 AI 公司燒錢速度與長期盈利能力。</p>
+        <p class="why"><strong>為什麼重要：</strong>OpenAI 仍是 AI 產業的重要風向標。若最頭部公司都開始面臨估值壓力，可能意味著資本市場進入更理性的定價階段。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://www.bloomberg.com/news/articles/2026-10-31/openai-funding-goal-cut-by-10-billion-as-ai-stocks-dip-ft-says" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">Bloomberg / FT</span>
+      </div>
+    </article>
+
+    <article data-companies="" data-category="Robot">
+      <div class="meta"><span class="tag">機器人 · 具身智能</span><span>★★★★★</span></div>
+      <p class="summary">機器人產業的焦點正從跑、跳、舞等運動能力，轉向理解環境、自主學習與完成複雜任務的具身智能。</p>
+      <details>
+        <summary><h2>中國人形機器人競爭從「身體」轉向「大腦」</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>中國市場對具身 AI 的資金投入持續升溫，企業競爭方向逐漸從機械本體轉向模型、感知與自主決策能力。</p>
+        <p class="why"><strong>為什麼重要：</strong>下一代機器人的差異化，很可能不是誰的馬達更好，而是誰擁有真正能理解世界、學習新任務的「機器人大腦」。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://wdsm710.com/2026/11/01/chinas-robot-makers-have-mastered-the-moves-now-comes-the-race-for-brains/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">Reuters syndication</span>
+      </div>
+    </article>
+
+    <article data-companies="" data-category="Security">
+      <div class="meta"><span class="tag">資安 · 加密資產</span><span>★★★★★</span></div>
+      <p class="summary">大型加密資產攻擊事件再次把國家級駭客、金融安全與 AI 輔助攻擊能力拉回科技產業焦點。</p>
+      <details>
+        <summary><h2>Binance 遭遇史上級別駭客攻擊，FBI 指向北韓</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>FBI 將事件歸因於北韓國家支持的 TraderTraitor 團體。事件也再次顯示，駭客活動正從個人犯罪逐步走向國家級組織化與資金化。</p>
+        <p class="why"><strong>為什麼重要：</strong>未來資安風險不只來自「更厲害的駭客」，還來自 AI 對漏洞發現、攻擊自動化與社交工程的放大作用。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://apnews.com/article/883f18140c1e21ce0c38781e72cbe315" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">Associated Press</span>
+      </div>
+    </article>
+
+    <article data-companies="Google" data-category="Robot">
+      <div class="meta"><span class="tag">自駕 · 汽車</span><span>★★★★☆</span></div>
+      <p class="summary">Toyota 與 Waymo 將把自動駕駛硬體更深地整合進量產車，並逐步推進日本與其他市場的測試。</p>
+      <details>
+        <summary><h2>Waymo + Toyota：Robotaxi 正準備走出美國</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>這代表 Robotaxi 正從「少數城市試驗」向「車廠原廠整合 + 全球化部署」移動。如果感測器與算力平台能在生產線直接整合，成本有機會進一步下降。</p>
+        <p class="why"><strong>為什麼重要：</strong>自駕的下一個門檻，不再只是技術能不能跑，而是能不能以汽車產業的成本、法規與量產方式大規模落地。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://www.theverge.com/transportation/1023112/waymos-next-robotaxi-is-a-purpose-built-toyota-bz4x" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">The Verge</span>
+      </div>
+    </article>
+
+    <article data-companies="Apple|Microsoft|Google|Meta" data-category="AI">
+      <div class="meta"><span class="tag">Apple · AI</span><span>★★★★☆</span></div>
+      <p class="summary">Apple 傾向把 AI 隱藏在系統體驗之中，而不是把「AI」本身做成唯一賣點。</p>
+      <details>
+        <summary><h2>Apple 的 AI 策略更清楚：不為 AI 而 AI</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>Apple 高層近期再次強調，理想的 AI 體驗應該是使用者感受到產品更自然、更好用，而不需要特別關心背後是不是 AI。</p>
+        <p class="why"><strong>為什麼重要：</strong>這與 Microsoft、Google、Meta 更直接的 AI 品牌化策略形成鮮明對比，也會影響未來 AI 如何進入手機與個人裝置。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">TechCrunch</span>
+      </div>
+    </article>
+
+    <article data-companies="Google" data-category="Infra">
+      <div class="meta"><span class="tag">太空 · AI 運算</span><span>★★★★☆</span></div>
+      <p class="summary">Project Suncatcher 已讓衛星上的 TPU 運行模型，並把回應傳回地球，太空資料中心從概念邁向實驗。</p>
+      <details>
+        <summary><h2>Google 已在太空中運行 AI 模型</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>這類實驗探索的方向包括更充分利用太陽能、降低對地面電網與土地的依賴，以及在軌運算的新可能性。</p>
+        <p class="why"><strong>為什麼重要：</strong>長期來看，AI 算力可能不只存在於地面資料中心；但散熱、維修、發射成本與太空垃圾仍是非常大的現實限制。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">The Verge</span>
+      </div>
+    </article>
+
+    <article data-companies="" data-category="Infra">
+      <div class="meta"><span class="tag">資料中心 · 監管</span><span>★★★★☆</span></div>
+      <p class="summary">隨 AI 推高能源與算力需求，更多政府開始把資料中心納入關鍵基礎設施、資安與能源效率監管框架。</p>
+      <details>
+        <summary><h2>資料中心正從 IT 設施變成「國家級基礎設施」</h2><span class="detail-hint">展開分析 ↓</span></summary>
+        <p>英國正強化資料中心的資安與韌性規範，歐洲也持續推動能源與用水效率要求。AI 正把資料中心從 IT 後台推到政策核心。</p>
+        <p class="why"><strong>為什麼重要：</strong>未來的 AI 競爭不只是模型競賽，也會受到土地、電力、冷卻、資安與政府政策共同限制。</p>
+      </details>
+      <div class="source-row">
+        <a class="read" href="https://www.gov.uk/government/publications/cyber-security-and-resilience-network-and-information-systems-bill-factsheets/data-centres" target="_blank" rel="noopener">閱讀原文 ↗</a>
+        <span class="source-name">UK Government</span>
+      </div>
+    </article>
+  </main>
+  <p id="emptyState" class="hidden">本期沒有符合篩選條件的文章。可切回「全部公司」或「全部」。</p>
+
+  <div class="tip">
+    <strong>在 iPhone 與 Mac 閱讀</strong><br>
+    iPhone：用 Safari 開啟此網址，點「分享」→「加入主畫面」。Mac：將此頁加入書籤。每次開啟皆讀取已發布的最新版本。
+  </div>
+
+  <footer>
+    本頁沿用原始科技晨報示範內容，尚未重新核實新聞與來源。點擊標題可展開詳情，閱讀原文可前往來源。每日自動更新與 ChatGPT 通知尚未串接。
+  </footer>
+</div>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
