@@ -73,3 +73,4 @@
       }
     }catch(e){ if(e.name!=='AbortError') alert('請複製瀏覽器網址列的連結分享。'); }
   });
+
